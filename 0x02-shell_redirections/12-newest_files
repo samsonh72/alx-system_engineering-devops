@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -exec stat -c '%X %n' {} \; | sort -nr | awk 'NR==1,NR==3 {print $2}'
+ls -tp | grep -v /$ | head -10
