@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -type f -printf "%t - %p\n" | sort -n | tail -1
+find . -type f -exec stat -c '%X %n' {} \; | sort -nr | awk 'NR==1,NR==3 {print $2}'
